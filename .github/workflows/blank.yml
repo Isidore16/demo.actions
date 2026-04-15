@@ -3,8 +3,9 @@ on: workflow_dispatch
 jobs:
   Hello:
    runs-on: ubuntu-22.04
-   steps:
-     - name: Hello steps
-       run: echo "welcome to my world"
-       run: echo "we have started the job"
+    steps:
+      - name: Hello steps
+        run: |
+          echo "welcome to my world"
+          echo "we have started the job"
    
