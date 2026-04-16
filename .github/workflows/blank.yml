@@ -1,11 +1,24 @@
 name: Hello World
 on: workflow_dispatch
 jobs:
-  Hello:
+  build:
    runs-on: ubuntu-22.04
    steps:
       - name: Hello steps
         run: |
           echo "welcome to my world"
           echo "we have started the job"
-   
+  test:
+     runs-on: ubuntu-22.04
+     steps:
+      - name: Hello steps
+        run: |
+          echo "welcome to my  test"
+        
+  deploy:
+     runs-on: ubuntu-22.04
+     steps:
+      - name: Hello steps
+        run: |
+          echo "welcome to my deploy"
+              
