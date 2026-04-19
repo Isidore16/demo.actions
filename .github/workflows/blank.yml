@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: connect to ENV
-        run: echo "connected to ${{ vars.APP.ENV}}"
+        run: echo "connected to ${{ vars.APP_ENV}}"
