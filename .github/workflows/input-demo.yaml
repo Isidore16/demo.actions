@@ -6,11 +6,21 @@ on:
       environment:
         description: "Select environment"
         required: true
-        default: "dev"
+        default: dev
+        type: choice
+        options:
+          - dev
+          - test
+          - prod
+      artifact_tag:
+        description: "Choosing the git tag to be deployed"
+        required: true
 
 jobs:
   demo:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy the app
-        run: echo "Selected environment is ${{ inputs.environment }}"
+        run: |
+          echo "Selected environment is ${{ inputs.environment }}"
+          echo "Artifact tag is ${{ inputs.artifact_tag }}"
