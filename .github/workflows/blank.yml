@@ -10,4 +10,4 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Build code
-        run: echo "hello your address is"
+        run: echo "hello your address is ${{ vars.ADDRESS}}"
