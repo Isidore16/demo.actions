@@ -1,7 +1,9 @@
 name: 2 Hello World
 
 on:
-  push:
+  workflow_dispatch:
+env:
+  APP_ENV: dev  
 
 jobs:
   build:
@@ -10,4 +12,4 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Build code
-        run: echo "hello your address is ${{ secrets.PASSWARD}}"
+        run: echo "hello your address is ${{ vars.APP.ENV}}"
