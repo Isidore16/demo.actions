@@ -4,7 +4,7 @@ on:
   push:
 jobs:
   context-variable:
-    runs-on: ubuntu latest 
+    runs-on: ubuntu-latest
     steps:
       - name: contect vars used continue-on-error
         run: |
