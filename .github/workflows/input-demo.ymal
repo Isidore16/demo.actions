@@ -1,0 +1,16 @@
+name: Input Example
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Select environment"
+        required: true
+        default: "dev"
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy the app
+        run: echo "Selected environment is ${{ inputs.environment }}"
