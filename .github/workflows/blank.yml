@@ -1,7 +1,7 @@
-name: Hello World
+name: 2 Hello World
 
 on:
-  workflow_dispatch:
+  push:
 
 jobs:
   build:
@@ -9,25 +9,6 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+      - name: Build code
+        run: echo "Building code..."
 
-      - name: Run build
-        run: |
-          echo "Running build stage..."
-
-  test:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Run tests
-        run: |
-          echo "Running test stage..."
-
-  deploy:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - name: Deploy app
-        run: |
-          echo "Running deploy stage..."
-          
-              
