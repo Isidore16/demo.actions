@@ -3,13 +3,10 @@ name: 2 Hello World
 on:
   workflow_dispatch:
 env:
-  APP_ENV: dev  
-
+  APP_ENV: "dev"  
 jobs:
-  build:
+  ved-demo:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Build code
-        run: echo "hello your address is ${{ vars.APP.ENV}}"
+      - name: connect to ENV
+        run: echo "connected to ${{ vars.APP.ENV}}"
