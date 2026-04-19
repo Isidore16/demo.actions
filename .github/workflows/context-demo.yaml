@@ -2,17 +2,18 @@ name: context variables
 
 on:
   push:
+
 jobs:
   context-variable:
     runs-on: ubuntu-latest
     steps:
-      - name: contect vars used continue-on-error
+      - name: context vars used continue-on-error
         run: |
-          echo "this workflow is tigered by ${{ github.actor}}"
-          echo "the repository name is ${{github.repository}}"
+          echo "this workflow is triggered by ${{ github.actor }}"
+          echo "the repository name is ${{ github.repository }}"
           
-      - name: geting json full contect
+      - name: getting full context as JSON
         run: |
-          "${{ toJson(github) }}"
+          echo '${{ toJson(github) }}'
          
       
