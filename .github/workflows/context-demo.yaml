@@ -12,6 +12,7 @@ jobs:
           echo "the repository name is ${{github.repository}}"
           
       - name: geting json full contect
-        run: "${{ toJson(github) }}"
+        run: |
+          "${{ toJson(github) }}"
          
       
