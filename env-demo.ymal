@@ -1,0 +1,13 @@
+
+name: env.demo 
+
+on:
+  workflow_dispatch:
+env:
+  APP_ENV:dev
+jobs:
+  env_demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: connect to env
+        run: echo "hello your address is ${{ vars.APP_ENV}}"
