@@ -8,6 +8,8 @@ env:
 
 jobs:
   ved-demo:
+    env:
+      APP_ENV: test
     runs-on: ubuntu-latest
     steps:
       - name: connect to ENV
