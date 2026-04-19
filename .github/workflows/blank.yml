@@ -1,8 +1,14 @@
 name: 2 Hello World
-
 on:
   push:
-
+   branches:
+    - main
+    - develop
+  pull_request:
+   branches:
+    - main
+    - testpull
+  
 jobs:
   build:
     runs-on: ubuntu-latest
