@@ -13,6 +13,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: connect to ENV
-     env:
-       APP_ENV: prod
-    run: echo "connected to $APP_ENV"
+        env:
+           APP_ENV: prod
+        run: echo "connected to $APP_ENV"
