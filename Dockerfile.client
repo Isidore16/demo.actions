@@ -1,0 +1,22 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# Install system dependencies required by confluent-kafka (librdkafka)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    librdkafka-dev \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy application code
+COPY kafka_client.py .
+
+# Run as non-root user
+RUN useradd -m appuser
+USER appuser
+
+CMD ["python", "kafka_client.py"]
