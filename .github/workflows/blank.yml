@@ -1,14 +1,18 @@
-name: 2 Hello World
+name: "ENV World"
 
 on:
-  push:
+  workflow_dispatch:
+
+env:
+  APP_ENV: dev  
 
 jobs:
-  build:
+  ved-demo:
+    env:
+      APP_ENV: test
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-      - name: Build code
-        run: echo "Building code..."
-
+      - name: connect to ENV
+        env:
+           APP_ENV: prod
+        run: echo "connected to $APP_ENV"
